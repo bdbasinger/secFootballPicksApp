@@ -1,19 +1,20 @@
 package com.basinger.secFootballPicksApp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-@Entity(name = "_Users")
-@Getter
-@Setter
+
+@Data
+// @Data annotation: Equivalent to @Getter, @Setter,
+// @RequiredArgsConstructor, @ToString, @EqualsAndHashcode
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,3 +25,5 @@ public class User {
     private String password;
     private String cell;
 }
+
+
