@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Week 1 Picks</title>
+  <style>
+    /* Inline CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+    }
+
+    thead {
+      background-color: #555;
+      color: white;
+    }
+
+    th, td {
+      padding: 1em;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    input[type="radio"] {
+      margin-right: 0.5em;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Week 1 Games</h1>
+
+<form action="#" th:action="@{/submitPicks}" method="post">
+  <table>
+    <thead>
+    <tr>
+      <th>Home Team</th>
+      <th>Away Team</th>
+      <th>Pick</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pick, iterStat : *{pickForm.weekOnePicks}">
+      <td th:text="${pick.game.homeTeam}"></td>
+      <td th:text="${pick.game.awayTeam}"></td>
+      <td>
+        <input type="radio" th:field="*{pickForm.weekOnePicks[__${iterStat.index}__].prediction}" value="W"/> Win
+        <input type="radio" th:field="*{pickForm.weekOnePicks[__${iterStat.index}__].prediction}" value="L"/> Lose
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="submit">Submit Picks</button>
+</form>
+
+</body>
+</html>
