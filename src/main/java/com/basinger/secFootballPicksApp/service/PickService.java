@@ -1,6 +1,6 @@
 package com.basinger.secFootballPicksApp.service;
 
-import com.basinger.secFootballPicksApp.PickRepository;
+import com.basinger.secFootballPicksApp.repos.PickRepository;
 import com.basinger.secFootballPicksApp.model.Pick;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,7 @@
 package com.basinger.secFootballPicksApp.service;
 
-import com.basinger.secFootballPicksApp.UserRepository;
+import com.basinger.secFootballPicksApp.repos.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.basinger.secFootballPicksApp.model.User;
 
