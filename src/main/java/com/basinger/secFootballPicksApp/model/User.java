@@ -6,6 +6,9 @@ import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Data
 // @Data annotation: Equivalent to @Getter, @Setter,
@@ -24,6 +27,8 @@ public class User {
     private String email;
     private String password;
     private String cell;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Pick> picks = new ArrayList<>();
 }
 
 
