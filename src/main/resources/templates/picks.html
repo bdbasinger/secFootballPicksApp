@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Contest Grid</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<h1>SEC HELMET FOOTBALL SCHEDULE 2023</h1>
+<form action="/savePicks" method="post">
+  <table>
+    <tr>
+      <th></th>
+      <th th:each="week : ${#numbers.sequence(1, 13)}" th:text="'Week ' + ${week}"></th>
+    </tr>
+    <tr th:each="team : ${teams}">
+      <td th:text="${team}"></td>
+      <td th:each="week : ${#numbers.sequence(1, 13)}">
+        <input type="text" th:field="*{picks[__${team}__][__${week}__]}" maxlength="1" />
+      </td>
+    </tr>
+  </table>
+  <input type="submit" value="Save Picks">
+</form>
+</body>
+</html>

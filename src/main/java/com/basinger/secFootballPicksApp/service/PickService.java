@@ -33,4 +33,8 @@ public class PickService {
     public void deletePick(Long id) {
         pickRepository.deleteById(id);
     }
+
+    public void saveAll(List<Pick> submittedPicks) {
+        pickRepository.saveAll(submittedPicks);
+    }
 }
