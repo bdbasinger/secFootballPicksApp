@@ -1,4 +1,4 @@
-package com.basinger.secFootballPicksApp;
+package com.basinger.secFootballPicksApp.repos;
 
 import com.basinger.secFootballPicksApp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
